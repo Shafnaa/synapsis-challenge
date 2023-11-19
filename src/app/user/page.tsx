@@ -1,9 +1,9 @@
 import { Suspense } from "react";
-import BlogPostsSkeleton from "../skeletons/blogPostsSkeleton";
-import BlogPosts from "../components/blogPosts";
+import UsersSkeleton from "../skeletons/usersSkeleton";
+import Users from "../components/users";
 import Pagination from "../components/pagination";
 
-export default async function BlogsPage({
+export default async function UsersPage({
   searchParams,
 }: {
   searchParams?: {
@@ -18,11 +18,11 @@ export default async function BlogsPage({
     <div className="py-8 px-4 md:px-8">
       <main className="w-full mx-auto md:w-[728px]">
         <div className="flex flex-row justify-between">
-          <h1 className="w-full font-bold text-lg">Blog Posts</h1>
+          <h1 className="w-full font-bold text-lg">Users</h1>
           <Pagination />
         </div>
-        <Suspense fallback={<BlogPostsSkeleton />}>
-          <BlogPosts query={query} currentPage={currentPage} />
+        <Suspense fallback={<UsersSkeleton />}>
+          <Users query={query} currentPage={currentPage} />
         </Suspense>
       </main>
     </div>
