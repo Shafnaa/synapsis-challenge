@@ -108,6 +108,9 @@ export default function Navbar() {
           </div>
         </Dialog.Panel>
       </Dialog>
+      <div className="px-4 md:hidden">
+        <SearchBar placeholder="Search..." />
+      </div>
     </header>
   );
 }
