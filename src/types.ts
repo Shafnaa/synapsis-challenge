@@ -6,11 +6,11 @@ export type postType = {
 };
 
 export type userType = {
-  id: number;
+  id?: number;
   name: string;
   email: string;
-  gender: string;
-  status: string;
+  gender: "male" | "female";
+  status: "active" | "inactive";
 };
 
 export type commentType = {

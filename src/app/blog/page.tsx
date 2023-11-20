@@ -24,6 +24,7 @@ export default async function BlogsPage({
         <Suspense fallback={<BlogPostsSkeleton />}>
           <BlogPosts query={query} currentPage={currentPage} />
         </Suspense>
+        <Pagination />
       </main>
     </div>
   );

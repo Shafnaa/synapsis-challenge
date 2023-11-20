@@ -27,6 +27,7 @@ export default async function Home({
         <Suspense fallback={<BlogPostsSkeleton />}>
           <BlogPosts query={query} currentPage={currentPage} />
         </Suspense>
+        <Pagination />
       </main>
       <div className="w-full md:w-96">
         <div className="md:sticky md:top-32">
