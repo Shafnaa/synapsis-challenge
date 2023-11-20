@@ -24,7 +24,7 @@ export default async function BlogPosts({
         <ul className="space-y-2 pt-3">
           {blogPostsData.map((data) => {
             return (
-              <Suspense fallback={<BlogPostSkeleton />}>
+              <Suspense fallback={<BlogPostSkeleton />} key={data.id}>
                 <BlogPost post={data} />
               </Suspense>
             );

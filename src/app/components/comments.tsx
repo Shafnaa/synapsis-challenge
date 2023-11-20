@@ -11,7 +11,7 @@ export default async function Comments({ post_id }: { post_id: string }) {
     <ul className="flex flex-col gap-2">
       {commentsData.length == 0
         ? commentsData.map((data) => {
-            return <Comment comment={data} />;
+            return <Comment comment={data} key={data.id} />;
           })
         : "no comments"}
     </ul>

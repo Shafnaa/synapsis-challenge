@@ -27,7 +27,7 @@ export default async function Users({
         <ul className="space-y-2 pt-3">
           {usersData.map((data) => {
             return (
-              <Suspense fallback={<UserSkeleton />}>
+              <Suspense fallback={<UserSkeleton />} key={data.id}>
                 <User user={data} />
               </Suspense>
             );

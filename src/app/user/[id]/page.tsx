@@ -35,13 +35,11 @@ export default async function UserDetailPage({
           <p className="pt-3">Not Available</p>
         ) : (
           <ul className="space-y-2 pt-3">
-            {userPostsData.map((data) => {
-              return (
-                <Suspense fallback={<BlogPostSkeleton />}>
-                  <BlogPost post={data} />
-                </Suspense>
-              );
-            })}
+            {userPostsData.map((data) => (
+              <Suspense fallback={<BlogPostSkeleton />} key={data.id}>
+                <BlogPost post={data} />
+              </Suspense>
+            ))}
           </ul>
         )}
       </main>
