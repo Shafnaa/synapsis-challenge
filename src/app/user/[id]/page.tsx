@@ -1,11 +1,8 @@
-// "use client";
-
 import ProfileOption from "@/app/components/profileOption";
 import UserPosts from "@/app/components/userPosts";
 import UserProfile from "@/app/components/userProfile";
 import BlogPostsSkeleton from "@/app/skeletons/blogPostsSkeleton";
 import UserSkeleton from "@/app/skeletons/userSkeleton";
-import Link from "next/link";
 import { Suspense } from "react";
 
 export default function UserDetailPage({ params }: { params: { id: string } }) {

@@ -5,7 +5,7 @@ import { deleteUserAction } from "@/app/lib/data";
 import Link from "next/link";
 
 const initialState = {
-  message: null,
+  message: "",
 };
 
 export default function ProfileOption({ userId }: { userId: number | string }) {

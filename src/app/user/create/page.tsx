@@ -4,10 +4,10 @@ import { useFormState } from "react-dom";
 import { createUserAction } from "@/app/lib/data";
 
 const initialState = {
-  message: null,
+  message: "",
 };
 
-export default function createUser() {
+export default function CreateUser() {
   const [state, formAction] = useFormState(createUserAction, initialState);
 
   return (

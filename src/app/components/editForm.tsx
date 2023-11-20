@@ -1,12 +1,26 @@
 "use client";
 
-import { useFormState } from "react-dom";
+import { useFormState, useFormStatus } from "react-dom";
 import { editUserAction } from "@/app/lib/data";
 import { userType } from "@/types";
 
 const initialState = {
-  message: null,
+  message: "",
 };
+
+function SubmitButton() {
+  const { pending } = useFormStatus();
+
+  return (
+    <button
+      type="submit"
+      aria-disabled={pending}
+      className="border border-cyan-300 rounded-xl py-2 px-4"
+    >
+      Submit
+    </button>
+  );
+}
 
 export default function EditForm({ userData }: { userData: userType }) {
   const [state, formAction] = useFormState(editUserAction, initialState);
@@ -85,10 +99,7 @@ export default function EditForm({ userData }: { userData: userType }) {
         </select>
       </div>
       <div className="flex justify-end py-2">
-        <input
-          type="submit"
-          className="border border-cyan-300 rounded-xl py-2 px-4"
-        />
+        <SubmitButton />
       </div>
       <p>{state?.message}</p>
     </form>
