@@ -1,4 +1,3 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 This is a project for Interview Synapsis Challenge Test using [Next.js](https://nextjs.org/). Using the public API from [gorest](https://gorest.co.in/).   
 
 ## Run the Development Server
