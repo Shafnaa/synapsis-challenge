@@ -2,9 +2,10 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import SearchBar from "./searchBar";
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import SearchBarSkeleton from "../skeletons/searchBarSkeleton";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -55,7 +56,11 @@ export default function Navbar() {
           </li>
         </ul>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <SearchBar placeholder="Search..." />
+          <Suspense
+            fallback={<SearchBarSkeleton placeholder="Please Wait..." />}
+          >
+            <SearchBar placeholder="Search..." />
+          </Suspense>
         </div>
       </nav>
       <Dialog
@@ -109,7 +114,9 @@ export default function Navbar() {
         </Dialog.Panel>
       </Dialog>
       <div className="px-4 md:hidden">
-        <SearchBar placeholder="Search..." />
+        <Suspense fallback={<SearchBarSkeleton placeholder="Please Wait..." />}>
+          <SearchBar placeholder="Search..." />
+        </Suspense>
       </div>
     </header>
   );

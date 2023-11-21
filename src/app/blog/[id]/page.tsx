@@ -1,4 +1,5 @@
 import Comments from "@/app/components/comments";
+import { GenderFemale, GenderMale } from "@/app/components/svg";
 import { getPostsById, getUserById } from "@/app/lib/data";
 import CommentSkeleton from "@/app/skeletons/commentSkeleton";
 import { postType, userType } from "@/types";
@@ -36,7 +37,9 @@ export default async function BlogDetailPage({
             href={`/user/${userData.id}`}
             className="flex flex-row items-center gap-2"
           >
-            <div className="h-16 w-16 bg-slate-300 rounded-full"></div>
+            <div className="h-16 w-16 rounded-full overflow-clip">
+              {userData.gender == "male" ? <GenderMale /> : <GenderFemale />}
+            </div>
             <div className="flex flex-col justify-evenly">
               <div className="flex flex-row gap-2 font-semibold text-xl">
                 <p>{userData.name}</p>
