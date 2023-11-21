@@ -1,8 +1,9 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a project for Interview Synapsis Challenge Test using [Next.js](https://nextjs.org/). Using the public API from [gorest](https://gorest.co.in/).   
 
-## Getting Started
+## Run the Development Server
 
-First, run the development server:
+To run the development server:
 
 ```bash
 npm run dev
@@ -20,7 +21,21 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+## Build Project
+
+Run this command to build the project:
+
+```bash
+npm run build
+# or
+yarn build
+# or
+pnpm build
+# or
+bun build
+```
+
+## Details About Next.js 
 
 To learn more about Next.js, take a look at the following resources:
 
